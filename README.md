@@ -214,3 +214,5 @@ const App = () => {
 - Then at the very bottom of 'settings.py', set CORS_ORIGIN_ALLOW_ALL = True
 
 And finally we should have our two articles displayed!!
+
+- One last note, to get an id to more easily iterate over our articles, we can go to our serializers.py file an add 

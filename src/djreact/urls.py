@@ -19,5 +19,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     url('api-auth/', include('rest_framework.urls')),
     url(r'^admin/', admin.site.urls),
-    url('api/', include('articles.api.urls'))
+    url('', include('articles.api.urls'))
 ]
