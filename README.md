@@ -215,4 +215,30 @@ const App = () => {
 
 And finally we should have our two articles displayed!!
 
-- One last note, to get an id to more easily iterate over our articles, we can go to our serializers.py file an add 
+- One last note, to get an id to more easily iterate over our articles, we can go to our serializers.py file an add
+
+```
+const useAxios = url => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(async () => {
+    const { data } = axios.get(url);
+    setData(data);
+    setLoading(false);
+  }, []);
+
+  return { data, loading }
+}
+
+const ArticleDetail = ({ articleId }) => {
+  const { data, loading } = useAxios(`/api/${articleId}`);
+
+  return !loading && (
+    <div>
+      <h3>{data.title}</h3>
+      <p>{data.content}</p>
+    </div>
+  )
+}
+```
